@@ -11,7 +11,7 @@ $(document).ready(start);
 function start(){
     //event listeners
     $('#calculate').on('click', calculator);
-    //$('#clear').on('click', clearData);
+    $('#clear').on('click', clearData);
 }//end ready function 
 
 function calculator(){
