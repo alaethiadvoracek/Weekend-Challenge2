@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
-const operatorChooser = require('./calculate.js')
+const operatorChooser = require('./calculate.js');
 
 
 app.use(express.static('server/public'));

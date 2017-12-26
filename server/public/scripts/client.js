@@ -1,8 +1,8 @@
 class objectOperation {
-    constructor(x,y,operator){
+    constructor(x,y,type){
         this.x = x;
         this.y = y;
-        this.operator= operator;
+        this.type= type;
     }//end constructor
 }//end class
 
@@ -19,17 +19,19 @@ function calculator(){
     console.log('button clicked')
     let value1 = $('#firstValue').val();
     let value2 = $('#secondValue').val();
-    let operator = $('#operatorBtns').val();
+    let operator = $('#operatorBtns :selected').val();
     let calculation = new objectOperation(value1, value2, operator);
     $.ajax({
         method: 'POST',
         url: '/calculation',
+        data: calculation,
         success: function (response){
             console.log('getting response:', response);
             doCalculation();
         },//end success function
         error: function (response){
-            alert('Your missing something, try again');
+            console.log('error', response);
+            alert('Your missing a step, try again');
         }//end error alert function 
     })//end ajax
 }//end calculator function 
@@ -41,15 +43,16 @@ function doCalculation(){
             console.log('response: ', response);
             let value1 = $('#firstValue').val();
             let value2 = $('#secondValue').val();
-            let operator = $('#operatorBtns').val();
+            let operator = $('#operatorBtns :selected').text();
             let calculation = new objectOperation(value1, value2, operator);
-            $('#results').append('<li>' + value1 + ' ' + operator + ' ' + value2 + ' ' + 
-            '=' + response.result + '</li>');
+            $('#results').append('<li>' + value1 + ' ' + operator + ' ' + value2 + 
+            ' ' + '=' + response.result + '</li>');
         }//end response function 
     })//end ajax
 }//end doCalculation function 
 function clearData(){
-    $('#results').empty();
+    // $('#results').empty();
+    console.log('clear button clicked');
     $('#firstValue').val('');
     $('#secondValue').val('');
 }//end clear data function 

@@ -1,23 +1,27 @@
 let calculate = {
     result: 0
-}
+}//end variable 
 
-function math (object) {
-    let operation = object.type;
+function math (operator) {
+    let operation = operator.type;
     if(operation === 'add') {
-        calc.result = Number(object.x) + Number(obj.y);  
-    } else if (operation === 'subtract') {
-        calc.result = Number(object.x) - Number(obj.y);
-    } else if (operation === 'multiply') {
-       calc.result = Number(object.x) * Number(obj.y);
-    } else if (operation === 'divide') {
-        calc.result = Number(object.x) / Number(obj.y);
-    } else {
-        console.log('Choose an operator'); 
-    }
-}
+        calculate.result = Number(operator.x) + Number(operator.y);  
+    } //end if 
+    else if (operation === 'subtract') {
+        calculate.result = Number(operator.x) - Number(operator.y);
+    }//end if else
+     else if (operation === 'multiply') {
+       calculate.result = Number(operator.x) * Number(operator.y);
+    }//end if else
+     else if (operation === 'divide') {
+        calculate.result = Number(operator.x) / Number(operator.y);
+    }//end if else 
+    else {
+        console.log('Choose an operation'); 
+    }//end else
+}//end math operator function 
 
 module.exports = {
     math: math,
     calculate: calculate
-}
+}//end export
