@@ -17,6 +17,7 @@ app.get('/calculation', function (req, res){
     res.send(operatorChooser.calculate);
 })//end app get 
 
+//server port and listener
 const port = 4500;
 app.listen(port, function(req, res){
     console.log('server is up on port:', port);

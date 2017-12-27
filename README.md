@@ -5,7 +5,7 @@
 - [x]Create GET & POST to go back and forth from the server 
 - [x]Append results to the DOM 
 - [x]Create clear button 
-- [ ]Append history to DOM 
+- For some reason I am getting an internal server error but see nothing wrong with my code... 
 
 ##OTHERS 
 - [x]Comment code 
