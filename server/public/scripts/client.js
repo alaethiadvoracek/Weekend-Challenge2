@@ -28,6 +28,7 @@ function calculator(){
         success: function (response){
             console.log('getting response:', response);
             doCalculation();
+            Calculate();
         },//end success function
         error: function (response){
             console.log('error', response);
@@ -50,6 +51,16 @@ function doCalculation(){
         }//end response function 
     })//end ajax
 }//end doCalculation function 
+function Calculate(){
+    $.ajax({
+        method: "GET",
+        url:'/calculate',
+        success: function (response){
+            console.log('getting response:', response);
+            calculator();
+        }//end success function 
+    })//end ajax
+}//end calculate function 
 function clearData(){
     // $('#results').empty();
     console.log('clear button clicked');
