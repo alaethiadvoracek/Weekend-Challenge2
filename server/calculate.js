@@ -22,7 +22,7 @@ function math (operator) {
         console.log('Choose an operation'); 
     }//end else
 }//end math operator function 
-
+console.log('function worked');
 //export function 
 module.exports = {
     math: math,

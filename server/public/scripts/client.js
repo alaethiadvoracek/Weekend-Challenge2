@@ -1,3 +1,4 @@
+$(document).ready(start);
 //class to create new objects to be posted in the server 
 class objectOperation {
     constructor(x,y,type){
@@ -6,8 +7,6 @@ class objectOperation {
         this.type= type;
     }//end constructor
 }//end class
-
-$(document).ready(start);
 //document ready function 
 function start(){
     //event listeners
