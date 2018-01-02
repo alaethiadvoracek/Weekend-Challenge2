@@ -1,6 +1,8 @@
 //object used in math function to set value of numbers and create a new object 
-let calculate = {
-    result: math()
+class calculate { 
+    constructor (result){
+    this.result = result
+    }//end constructor
 }//end variable 
 
 //function to do the math when an operator has been choosen. 
@@ -22,7 +24,6 @@ function math (operator) {
         console.log('Choose an operation'); 
     }//end else
 }//end math operator function 
-console.log('function worked');
 //export function 
 module.exports = {
     math: math,
