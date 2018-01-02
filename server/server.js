@@ -9,7 +9,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 
 app.post('/calculation', function (req, res){
     console.log(req.body);
-    operaterChooser.math(req.body);
+    operatorChooser.math(req.body);
     res.sendStatus(201);
 })//end app post 
 

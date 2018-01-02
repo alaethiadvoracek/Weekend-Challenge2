@@ -18,8 +18,8 @@ function start(){
 function calculator(){
     //makes sure button works
     console.log('button clicked')
-    let value1 = $('#firstValue').val();
-    let value2 = $('#secondValue').val();
+    let value1 = $('#value1').val();
+    let value2 = $('#value2').val();
     let operator = $('#operatorBtns :selected').val();
     let calculation = new objectOperation(value1, value2, operator);
     $.ajax({
@@ -44,13 +44,13 @@ function doCalculation(){
         url: '/calculation',
         success: function (response){
             console.log('response: ', response);
-            let value1 = $('#firstValue').val();
-            let value2 = $('#secondValue').val();
+            let value1 = $('#value1').val();
+            let value2 = $('#value2').val();
             let operator = $('#operatorBtns :selected').text();
             let calculation = new objectOperation(value1, value2, operator);
             //appending to the DOM 
             $('#results').append('<li>' + value1 + ' ' + operator + ' ' + value2 + 
-            ' ' + '=' + response.result + '</li>');
+            ' ' + ' = ' + response.result + '</li>');
         }//end response function 
     })//end ajax
 }//end doCalculation function 
@@ -59,8 +59,8 @@ function doCalculation(){
 function clearData(){
     // $('#results').empty();
     console.log('clear button clicked');
-    $('#firstValue').val('');
-    $('#secondValue').val('');
+    $('#value1').val('');
+    $('#value2').val('');
 }//end clear data function 
 
 

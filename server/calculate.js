@@ -1,21 +1,21 @@
 //object used in math function to set value of numbers and create a new object 
 let calculate = {
-    result: 0
+    result: math()
 }//end variable 
 
 //function to do the math when an operator has been choosen. 
 function math (operator) {
     let operation = operator.type;
-    if(operation === 'add') {
+    if(operation === '+') {
         calculate.result = Number(operator.x) + Number(operator.y);  
     } //end if 
-    else if (operation === 'subtract') {
+    else if (operation === '-') {
         calculate.result = Number(operator.x) - Number(operator.y);
     }//end if else
-     else if (operation === 'multiply') {
+     else if (operation === '*') {
        calculate.result = Number(operator.x) * Number(operator.y);
     }//end if else
-     else if (operation === 'divide') {
+     else if (operation === '/') {
         calculate.result = Number(operator.x) / Number(operator.y);
     }//end if else 
     else {
